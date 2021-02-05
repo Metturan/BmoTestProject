@@ -72,9 +72,10 @@ function searchAPI () {
         <div className='fieldGroup'>
           <label for="cityLookup">Find Location</label>
           <input id="cityLookup" onChange={citySearch} type="text" value={city} />
+          <SearchedModal modal={modal} setCity={setCityFromSuggestions} cities={suggestedCities} />
         </div>
         
-        <SearchedModal modal={modal} setCity={setCityFromSuggestions} cities={suggestedCities} />
+        
         <div className="fieldGroup">
           <label for="keywordSearch">Use any keywords</label>
           <input id="keywordSearch" onChange={changeQuery} value={query} type="text"/>

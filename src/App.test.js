@@ -1,15 +1,26 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import store from './app/store';
-import App from './App';
+import { useSelector } from 'react-redux';
+import App from './components/App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
+jest.mock('react-redux', () => ({
+  useDispatch: jest.fn(),
+  useSelector: jest.fn(),
+}));
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+it('renders App component', () => {
+  useSelector.mockImplementation((selector) => selector({
+    searchResults: {
+      value: [{restaurant: {
+        id: '123',
+        thumb: 'asdf.jpg',
+        name: 'Jello',
+        cuisines: 'noodle',
+        location: {
+          address: '24 rue'
+        }
+      }}]
+    }
+  }));
+  render(<App />);
+
 });

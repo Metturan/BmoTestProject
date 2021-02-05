@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
 .App-header {
   min-height: 100vh;
   display: flex;
@@ -22,18 +11,107 @@
   font-size: calc(10px + 2vmin);
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.searchContainer {
+  margin-top: 50px;
+  position: relative;
+  display: inline;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
+.search-modal-container li {
+  padding-left: 15px;
+}
+
+.search-modal-container {
+  position: absolute;
+  top: 27px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #eee;
+  text-align:left;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s linear;
+}
+
+.search-modal-container.isOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.list-stores {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.list-stores li {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin: 5px 0;
+  width: 600px;
+  border: 1px solid #eee;
+}
+
+.infoBox {
+  padding-left: 20px;
+  display: flex;
+}
+
+.infoBox p {
+  margin: 5px 0;
+  padding: 0 10px;
+}
+
+.list-stores li img {
+  width: 100px;
+  max-width: 100%;
+}
+
+.thumbposter {
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+}
+
+.infoBox > p:first-child {
+  width: 147px;
+}
+.infoBox > p:nth-child(2) {
+  width: 113px;
+}
+.infoBox > p:last-child {
+  width: 151px;
+}
+
+@media (max-width: 600px) {
+  .list-stores li {
+    width: 90%;
   }
-  50% {
-    transform: translateY(10px)
+  .infoBox {
+    flex-direction: column;
+    padding-left: 0;
   }
-  100% {
-    transform: translateY(0px)
+  .list-stores .infoBox p {
+    width: 95%;
+  }
+  .searchContainer {
+    width: 70%;
+    flex-direction: column;
+    margin: 0 auto;
+    display: flex;
+  }
+}
+
+@media (max-width: 350px) {
+  .list-stores li img {
+    display: none;
   }
 }

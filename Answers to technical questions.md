@@ -1,5 +1,7 @@
 # BmoTestProject
 
+Link to heroku: https://bmoredux.herokuapp.com/
+
 
 1. I spent around 6 hours working on the coding assignment. In a real situation i would want to add more or even redo some existing functionality. Some things I may want to work on is: a) Form validation of some kind, b) Setting up pagination, c) My modal popup that chooses locations to be better integrated.
 

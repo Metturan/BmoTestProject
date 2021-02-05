@@ -69,9 +69,17 @@ function searchAPI () {
   return (
     <div style={{marginTop: '50px'}}>
       <div className="searchContainer">
-        <input placeholder="Type Location" onChange={citySearch} type="text" value={city} />
+        <div className='fieldGroup'>
+          <label for="cityLookup">Find Location</label>
+          <input id="cityLookup" onChange={citySearch} type="text" value={city} />
+        </div>
+        
         <SearchedModal modal={modal} setCity={setCityFromSuggestions} cities={suggestedCities} />
-        <input placeholder="Any related keywords" onChange={changeQuery} value={query} type="text"/>
+        <div className="fieldGroup">
+          <label for="keywordSearch">Use any keywords</label>
+          <input id="keywordSearch" onChange={changeQuery} value={query} type="text"/>
+        </div>
+
         <button onClick={searchAPI}>Search</button>
       </div>
     </div>

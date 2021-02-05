@@ -14,7 +14,23 @@
 .searchContainer {
   margin-top: 50px;
   position: relative;
-  display: inline;
+  display: flex;
+  justify-content: center;
+}
+
+.fieldGroup {
+  width: 200px;
+  flex-direction: column;
+  display: flex;
+}
+
+label {
+  text-align: left;
+}
+
+button {
+  height: 21px;
+  align-self: flex-end;
 }
 
 .search-modal-container li {
@@ -92,6 +108,14 @@ ul {
 }
 
 @media (max-width: 600px) {
+  .fieldGroup {
+    margin-bottom: 6px;
+    width: 100%;
+  }
+  button {
+    align-self: unset;
+    margin-top: 10px;
+  }
   .list-stores li {
     width: 90%;
   }
